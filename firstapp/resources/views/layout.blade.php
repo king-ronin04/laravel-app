@@ -35,6 +35,10 @@
     @yield('contact')
 </div>
 
+<div>
+    @yield('products')
+</div>
+
 <!-- <div>
     @include('footer')
 </div> -->

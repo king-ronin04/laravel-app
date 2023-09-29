@@ -21,23 +21,32 @@ Route::get('/', function () {
 
 
 // Use of Name Routes
-Route::get('/intro',function(){
-     return redirect()->route('layout-page');
-     });
+Route::get('/intro', function () {
+    return redirect()->route('layout-page');
+});
 
 
 
 Route::get('/list', function () {
-    $name=request('n');
-    $code=request('c');
-    return view('list',['name'=>$name,'code'=>$code]);
-    });
+    $name = request('n');
+    $code = request('c');
+    return view('list', ['name' => $name, 'code' => $code]);
+});
 
 
 
 Route::get('/home', function () {
-    return view('home');
+    return view('home', ["name" => "ASUS", "price" => "1,20,000", "model" => "TUF F15"]);
 });
+
+// Route with both name and brand
+Route::get('/products/{name}/{brand}', [ProductController::class, 'showByNameAndBrand']);
+
+// Route with only name (brand is optional)
+Route::get('/products/{name}', [ProductController::class, 'showByName']);
+Route::get('/products', [ProductController::class, 'showProducts']);
+
+
 Route::get('/aboutus', function () {
     return view('aboutus');
 });
