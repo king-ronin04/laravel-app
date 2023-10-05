@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\contactForm;
+use App\Http\Controllers\ContactFormController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NykaaController;
 use App\Http\Controllers\ProductController;
@@ -68,6 +68,7 @@ Route::fallback(function () {
 Route::get('/store', [NykaaController::class, 'index']);
 
 
-Route::get('/contact',[contactForm::class,'showForm']);
-// Route::get('/contact',[contactForm::class,'getData']);
+Route::get('/contact',[ContactFormController::class,'showForm']);
+// Route::get('/contact',[ContactFormController::class,'getData']);
+
 
