@@ -68,7 +68,8 @@ Route::fallback(function () {
 Route::get('/store', [NykaaController::class, 'index']);
 
 
-Route::get('/contact',[ContactFormController::class,'showForm']);
-// Route::get('/contact',[ContactFormController::class,'getData']);
+Route::get('/contact', [ContactFormController::class, 'showForm'])->name('contact.form');
+Route::post('/contact', [ContactFormController::class, 'getData'])->name('contact.submit');
+
 
 

@@ -1,9 +1,12 @@
 @extends('layout')
 
 @section('contact')
-            @csrf
-            <form class="container" style="margin-top: 30px;"  method="POST">
 
+
+
+
+            <form class="container" style="margin-top: 30px;"  method="POST" action="{{ route('contact.submit') }}">
+                @csrf
                 <p class= "h4 mb-4">Contact us</p>
 
                 <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name">

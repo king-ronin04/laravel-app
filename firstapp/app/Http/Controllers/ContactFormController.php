@@ -19,9 +19,7 @@ class ContactFormController extends Controller
       'message' => 'required'
     ]);
 
-    // Save data
-
-    return redirect('/contact')->with('success', 'Thanks for contacting us!');
+    return redirect('/contact');
 
     }
 }
