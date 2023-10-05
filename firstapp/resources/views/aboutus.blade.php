@@ -3,10 +3,6 @@
 @section('aboutus')
 
 
-
-
-
-
       <!-- 
         - #FEATURE-CARDS
       -->
