@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactFormController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NykaaController;
 use App\Http\Controllers\ProductController;
@@ -70,6 +71,19 @@ Route::get('/store', [NykaaController::class, 'index']);
 
 Route::get('/contact', [ContactFormController::class, 'showForm'])->name('contact.form');
 Route::post('/contact', [ContactFormController::class, 'getData'])->name('contact.submit');
+
+
+
+
+Route::get('/user',function(){
+    return view('user');
+});
+Route::get('/noaccess',function(){
+    return view('noaccess');
+});
+Route::get('/checkAge',function(){
+    return view('checkAge');
+});
 
 
 
